@@ -39,12 +39,16 @@ gtag('config', 'UA-82547706-10');
                 <div class="col-lg-6 text-center">
                     <div class="page-header text-left"><h1>Case Converter</h1></div>
                     <input type="text" class="form-control" id="txtdata" placeholder="Text..."> <br>
-                    <button id="button1" class="btn btn-success" accesskey="u" onclick='document.getElementById("txtdata").className = "uppercase form-control";' disabled>Uppercase</button>
-                    <button id="button2" class="btn btn-success" accesskey="l" onclick='document.getElementById("txtdata").className = "lowercase form-control";' disabled>Lowercase</button>
+                    <button id="button1" class="btn btn-success" accesskey="u" disabled>Uppercase</button>
+                    <button id="button2" class="btn btn-success" accesskey="l" disabled>Lowercase</button>
             </div>
                 <div class="col-lg-3 text-center"></div>
         </div>
     </div>   
-        <script>document.getElementById('button2').disabled = false; document.getElementById('button1').disabled = false;</script>
+        <script>
+            document.getElementById('button2').disabled = false; document.getElementById('button1').disabled = false;
+            document.getElementById("button1").onclick = function() {document.getElementById("txtdata").className = "uppercase form-control";};
+            document.getElementById("button2").onclick = function() {document.getElementById("txtdata").className = "lowercase form-control";};
+        </script>
     </body>
 </html>
